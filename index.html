@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="landing.css">
     <link rel="icon" type="image/png" href="Img/Favicon-Dark.png" media="(prefers-color-scheme: dark)">
     <link rel="icon" type="image/png" href="Img/Favicon-Light.png" media="(prefers-color-scheme: light)">
+    <style id="carousel-keyframe"></style>
 </head>
 <body>
 
@@ -359,5 +360,40 @@
         <p class="footer-copy">© 2025 SuperSonic Cup. Fan-run. Community-powered.</p>
     </footer>
 
+    
+    <script>
+        const track = document.getElementById('carousel');
+        const cards = Array.from(track.children);
+        const cardWidth = 260 + 24;
+
+        function fillCarousel() {
+            const screenWidth = window.innerWidth;
+            const totalCardsWidth = cards.length * cardWidth;
+            const setsNeeded = Math.ceil((screenWidth * 3) / totalCardsWidth) + 1;
+
+            track.innerHTML = '';
+
+            for (let i = 0; i < setsNeeded; i++) {
+                cards.forEach(card => {
+                    track.appendChild(card.cloneNode(true));
+                });
+            }
+    
+            const oneSetWidth = cards.length * cardWidth;
+            const totalWidth = track.children.length * cardWidth;
+            const scrollPercent = (oneSetWidth / totalWidth) * 100;
+    
+            const style = document.getElementById('carousel-keyframe');
+            style.textContent = `
+                @keyframes carousel-scroll {
+                    0%   { transform: translateX(0); }
+                    100% { transform: translateX(-${scrollPercent}%); }
+                }
+            `;
+        }
+
+        fillCarousel();
+        window.addEventListener('resize', fillCarousel);
+    </script>
 </body>
 </html>
