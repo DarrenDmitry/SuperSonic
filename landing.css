@@ -206,8 +206,8 @@ body {
 /* TROPHY ANIMATION */
 .hero-trophy {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
