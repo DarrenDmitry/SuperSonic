@@ -387,6 +387,7 @@ body {
     margin: 0 auto;
     max-width: 520px;
 }
+
 /* NOMINEES CAROUSEL */
 .carousel-track-wrap {
     margin-top: 52px;
@@ -430,7 +431,7 @@ body {
 
 @keyframes carousel-scroll {
     0%   { transform: translateX(0); }
-    100% { transform: translateX(-16.666%); }
+    100% { transform: translateX(-50%); }
 }
 
 .carousel-card {
