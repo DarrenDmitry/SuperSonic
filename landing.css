@@ -601,26 +601,27 @@ body {
 .timeline-inner {
     max-width: 1100px;
     margin: 0 auto;
+    padding: 0 60px;
 }
 
 .timeline {
     position: relative;
     display: flex;
-    flex-direction: row;
+    flex-direction: row !important;
     align-items: flex-start;
     margin-top: 60px;
+    margin-bottom: 20px;
     gap: 0;
 }
 
-/* horizontal line running through all dots */
 .timeline::before {
     content: '';
     position: absolute;
-    top: 20px;
-    left: 20px;
-    right: 20px;
+    top: 9px;
+    left: 0;
+    right: 0;
     height: 2px;
-    background: linear-gradient(90deg, var(--gold-border), rgba(255,255,255,0.1), var(--gold-border));
+    background: linear-gradient(90deg, transparent, var(--gold-border), rgba(255,255,255,0.15), var(--gold-border), transparent);
     z-index: 0;
 }
 
@@ -661,8 +662,6 @@ body {
 }
 
 .dot-trophy {
-    width: 24px;
-    height: 24px;
     background: var(--gold);
     border-color: var(--gold);
     box-shadow: 0 0 20px rgba(255,215,0,0.7);
@@ -740,6 +739,29 @@ body {
     color: var(--white-3);
     font-weight: 300;
     letter-spacing: 0.5px;
+}
+
+.tl-content {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: center;
+}
+
+.tl-status {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.status-done { color: rgba(255,255,255,0.35); }
+.status-live { color: #4ade80; animation: blink 1.8s ease-in-out infinite; }
+.status-upcoming { color: rgba(255,255,255,0.25); }
+
+@keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
 }
 
 /* FOOTER */
@@ -890,14 +912,13 @@ body {
     }
     
     /* Timeline Event */
-    .timeline-section {
-        padding: 80px 24px;
-    }
+    .timeline-section { padding: 80px 24px; }
+
+    .timeline-inner { padding: 0; }
 
     .timeline {
-        flex-direction: column;
+        flex-direction: column !important;
         align-items: flex-start;
-        gap: 0;
         padding-left: 12px;
     }
 
@@ -919,13 +940,11 @@ body {
         margin-bottom: 28px;
     }
 
-    .timeline-item:last-child {
-        margin-bottom: 0;
-    }
+    .timeline-item:last-child { margin-bottom: 0; }
 
     .timeline-dot {
         margin-bottom: 0;
-        margin-top: 16px;
+        margin-top: 4px;
         flex-shrink: 0;
     }
 
@@ -937,11 +956,7 @@ body {
         gap: 12px;
     }
 
-    .tl-content {
-        display: flex;
-        flex-direction: column;
-        gap: 4px;
-    }
+    .tl-content { align-items: flex-start; }
 
     /* FOOTER */
     .footer {
