@@ -239,7 +239,7 @@ body {
 }
 
 .trophy-icon img {
-    width: 60px;
+    width: 130px;
     height: auto;
     object-fit: contain;
 }
@@ -734,9 +734,17 @@ body {
     }
 
     .hero-trophy {
-        width: 220px;
-        height: 220px;
+        width: 160px;
+        height: 160px;
         align-self: center;
+    }
+
+    .ring-1 { width: 120px; height: 120px; }
+    .ring-2 { width: 160px; height: 160px; }
+    .ring-3 { width: 200px; height: 200px; }
+
+    .trophy-icon img {
+        width: 100px;
     }
 
     .ring-1 { width: 120px; height: 120px; }
