@@ -67,7 +67,6 @@ body {
 
 .card-wrap:hover .card {
     cursor: default;
-    transform: scale(1.01);
 }
 
 .img-frame {
